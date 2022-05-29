@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <QGraphicsView>
+#include <QPushButton>
 #include <QVector>
 
 class Node;
@@ -35,4 +36,10 @@ private:
 
 	QVector<Node*> mvNodes;
 	QVector<Edge*> mvEdges;
+
+
+	QPushButton* mpBtn;
+
+private slots:
+	void on_mpBtn_clicked();
 };

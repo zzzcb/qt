@@ -4,12 +4,22 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include <QRandomGenerator>
+
+#include <QPrinter>
+#include <QPrintDialog>
+#include <QPrinterInfo>
+
 #include <QDebug>
 
 
 GraphWidget::GraphWidget(QWidget *parent)
 	: QGraphicsView(parent),mTimerId(0)
 {
+
+	// test for print 
+	mpBtn = new QPushButton("print",this);
+	connect(mpBtn, &QPushButton::clicked, this, &GraphWidget::on_mpBtn_clicked);
+
 	setMinimumSize(420, 420);
 	QGraphicsScene* scene = new QGraphicsScene(this);
 
@@ -85,6 +95,11 @@ GraphWidget::GraphWidget(QWidget *parent)
 	mvEdges.push_back(edge12);
 	for (auto edge : mvEdges)
 		scene->addItem(edge);
+
+
+
+
+
 }
 
 GraphWidget::~GraphWidget()
@@ -114,8 +129,6 @@ void GraphWidget::zoomOut()
 
 void GraphWidget::shuffle()
 {
-	qDebug() << "item size is " << scene()->items().size();
-
 	for (auto item : scene()->items())
 	{
 		if (qgraphicsitem_cast<Node*>(item))
@@ -233,5 +246,40 @@ void GraphWidget::scaleView(qreal scaleFactor)
 		return;
 
 	scale(scaleFactor, scaleFactor);
+}
+
+void GraphWidget::on_mpBtn_clicked()
+{
+	//qDebug() << "below is printer info: ";
+	//for (auto info : QPrinterInfo::availablePrinterNames())
+	//{
+	//	qDebug() << info;
+	//}
+
+	QPrinter printer;
+	if (QPrintDialog(&printer).exec() == QDialog::Accepted) 
+	{
+		QPainter painter(&printer);
+		painter.setRenderHint(QPainter::Antialiasing);
+		// scene coord 适合数学原数据
+		scene()->render(&painter);
+	}
+
+	//QPrinter printer;
+	//if (QPrintDialog(&printer).exec() == QDialog::Accepted) 
+	//{
+	//	QPainter painter(&printer);
+	//	painter.setRenderHint(QPainter::Antialiasing);
+	//	// view coord 适合截屏
+	//	render(&painter);
+	//}
+
+	QPixmap pixmap(1920,1080);
+	QPainter painter2(&pixmap);
+	painter2.setRenderHint(QPainter::Antialiasing);
+	scene()->render(&painter2);
+	painter2.end();
+	pixmap.save("C:\\Users\\admin\\Desktop\\nb.png");
+
 }
 
