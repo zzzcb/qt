@@ -1,0 +1,96 @@
+qmake 学习官方文档
+
+	QT中的文件后缀名
+		.pro(project)  工程配置文件,内容为qmake语法,类似于cmake的CMakeLists.txt文件
+			
+
+		.pri(project include) 
+
+		.prf(project feature)  feature文件,
+			Features are collections of custom functions and definitions using qmake.
+
+
+		.prl(project library) 
+			主要和生成与使用静态库密切相关(动态库也可以有该文件)
+
+
+Qt Solution  
+	Qt Solution is a third-party library
+	https://blog.actorsfit.com/a?ID=00150-5435afb8-1d66-4070-b20c-ffa4de8dc676
+
+
+	Qt Solution- qtpropertybrowser
+
+			property
+		manager factory 
+			  browser 
+			  
+
+
+		继承关系
+			QtProperty ->  QtVariantProperty 【end】
+				
+			QObject ->QtAbstractPropertyManager ->  QtVariantPropertyManager	
+													QtBoolPropertyManager
+													QtStringPropertyManager	
+													QtPointFPropertyManager	
+														...
+														
+			QObject	->QtAbstractEditorFactoryBase-> QtAbstractEditorFactory ->  QtVariantEditorFactory      【end】
+																				QtFontEditorFactory
+																				QtLineEditFactory
+																				QtSpinBoxEditorFactory
+																				QtTimeEditFactory
+																				...
+																				
+
+											QtTreePropertyBrowser
+			QWidget  -> QtAbstractPropertyBrowser->     QtButtonPropertyBrowser     【end】
+											QtGroupBoxPropertyBrowser
+			
+		
+		QtProperty
+			Properties are created by objects of QtAbstractPropertyManager subclasses; 
+			a manager can create properties of a given type, and is used in conjunction with the QtAbstractPropertyBrowser class. 
+			A property is always owned by the manager that created it, which can be retrieved using the propertyManager() function.
+			
+			It is also possible to nest properties: QtProperty provides the addSubProperty(), insertSubProperty() and removeSubProperty() functions to manipulate the set of subproperties. 
+			Note that nested properties are not owned by the parent property, i.e. each subproperty is owned by the manager that created it.	
+		QtVariantProperty
+			The QtVariantProperty class is a convenience class based QVariant.
+			
+			
+			
+		QtAbstractPropertyManager
+			The QtAbstractPropertyManager provides an interface for property managers.
+			A manager can create and manage properties of a given type, and is used in conjunction with the QtAbstractPropertyBrowser class.
+			
+			When using a property browser widget, the properties are created and managed by implementations of the QtAbstractPropertyManager class.
+			
+			To ensure that the properties' values 【will be displayed using suitable editing widgets】, the managers are associated with objects of QtAbstractEditorFactory subclasses. 
+			The property browser will use these associations to determine which factories it should use to create the preferred editing widgets.
+		QtVariantPropertyManager
+			一个property 只有一个property type
+			一个property 有多个 attributes,每个attribute有其自己的 attribute type  
+			
+			
+		QtAbstractEditorFactory
+			The QtAbstractEditorFactory is the 【base template class】 for editor factories. 你可以继承它，实现自己想要的editor，当然它也提供了已经实现了的几个子类供你使用
+			
+			An editor factory is a class that is able to create an editing widget of a specified type (e.g. line edits or comboboxes) for a given QtProperty object, 
+			and it is used in conjunction with the QtAbstractPropertyManager and QtAbstractPropertyBrowser classes.
+			
+			Note that the QtAbstractEditorFactory functions are using the PropertyManager 【template argument class】 which can be any QtAbstractPropertyManager subclass.
+
+
+		
+		QtBrowserItem   谁也不继承  
+			The QtBrowserItem class represents a property in a property browser instance.  
+			
+			Browser items are created when a QtProperty is inserted to the property browser. 
+			
+			A QtBrowserItem uniquely identifies a browser's item. Thus, if the same QtProperty is inserted multiple times, each occurrence gets its own unique QtBrowserItem.
+			
+			The items are 【owned by QtAbstractPropertyBrowser】 and automatically deleted when they are removed from the browser.
+			
+			
