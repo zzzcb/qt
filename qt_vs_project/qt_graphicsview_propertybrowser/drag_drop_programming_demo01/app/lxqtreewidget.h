@@ -2,13 +2,13 @@
 
 #include <QTreeWidget>
 
-class LxTreeWidget : public QTreeWidget
+class lxQTreeWidget : public QTreeWidget
 {
 	Q_OBJECT
 
 public:
-	LxTreeWidget(QWidget *parent);
-	~LxTreeWidget();
+	lxQTreeWidget(QWidget *parent);
+	~lxQTreeWidget();
 protected:
 	void mouseMoveEvent(QMouseEvent *event) override;
 

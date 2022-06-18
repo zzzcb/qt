@@ -1,19 +1,19 @@
-﻿#include "lxgraphicsscene.h"
+﻿#include "lxqgraphicsscene.h"
 
 #include <QPainter>
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
 
-LxGraphicsScene::LxGraphicsScene(QObject *parent)
+lxQGraphicsScene::lxQGraphicsScene(QObject *parent)
 	: QGraphicsScene(parent)
 {
 }
 
-LxGraphicsScene::~LxGraphicsScene()
+lxQGraphicsScene::~lxQGraphicsScene()
 {
 }
 
-void LxGraphicsScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+void lxQGraphicsScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
 	update();
 	QGraphicsScene::mouseMoveEvent(event);

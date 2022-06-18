@@ -5,13 +5,13 @@
 #include <QUndoStack>
 #include "ui_lxdragdropwidget.h"
 
-class LxDragDropWidget : public QWidget
+class lxQDragDropWidget : public QWidget
 {
 	Q_OBJECT
 
 public:
-	LxDragDropWidget(QWidget *parent = Q_NULLPTR);
-	~LxDragDropWidget();
+	lxQDragDropWidget(QWidget *parent = Q_NULLPTR);
+	~lxQDragDropWidget();
 
 private slots:
 	void on_deleteAct_triggered();

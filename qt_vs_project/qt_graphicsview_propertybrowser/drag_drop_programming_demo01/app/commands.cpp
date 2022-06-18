@@ -4,14 +4,14 @@
 
 #include <QDebug>
 
-RemoveShapeCommand::RemoveShapeCommand(QGraphicsScene *_scene,QUndoCommand *parent/*=nullptr*/)
+lxQRemoveShapeCommand::lxQRemoveShapeCommand(QGraphicsScene *_scene,QUndoCommand *parent/*=nullptr*/)
 	:QUndoCommand(parent)
 {
 	mp_scene = _scene;
 	mlist_selectedItems = _scene->selectedItems();
 }
 
-void RemoveShapeCommand::redo()
+void lxQRemoveShapeCommand::redo()
 {
 	for (auto item : mlist_selectedItems)
 	{
@@ -20,7 +20,7 @@ void RemoveShapeCommand::redo()
 	setText(QObject::tr("Redo Delete %1").arg(mlist_selectedItems.count()));
 }
 
-void RemoveShapeCommand::undo()
+void lxQRemoveShapeCommand::undo()
 {
 	for (auto item : mlist_selectedItems)
 	{

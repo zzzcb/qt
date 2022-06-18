@@ -1,4 +1,5 @@
-﻿#include "lxdragdropwidget.h"
+﻿#include "lxqdragdropwidget.h"
+
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
@@ -6,7 +7,7 @@ int main(int argc, char *argv[])
 
 	QApplication a(argc, argv);
 
-	LxDragDropWidget w;
+	lxQDragDropWidget w;
 	w.show();
 
 

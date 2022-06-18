@@ -1,43 +1,42 @@
 ﻿#pragma once
 
-
 #include <QObject>
 #include <QGraphicsItem>
 
 #include "common.h"
 
-class LxGrphicsCurveLineItem;
+class lxQGrphicsCurveLineItem;
 
-// ucp : up connect point 
-class LxGraphicsUCPItem : public QGraphicsItem
+/** ucp : up connect point*/  
+class lxQGraphicsUCPItem : public QGraphicsItem
 {
 public:
-	LxGraphicsUCPItem(QGraphicsItem*parent = nullptr);
+	lxQGraphicsUCPItem(QGraphicsItem*parent = nullptr);
 	//~LxGraphicsUCPItem();
 
 	enum { Type = UserType + 2 };
 	int type()const override { return Type; };
 
-	void addLine(LxGrphicsCurveLineItem* line) { mvLine.push_back(line); };
-	void removeLine(LxGrphicsCurveLineItem* line) { mvLine.removeAll(line); };
+	void addLine(lxQGrphicsCurveLineItem* line) { mlist_Line.push_back(line); };
+	void removeLine(lxQGrphicsCurveLineItem* line) { mlist_Line.removeAll(line); };
 
 protected:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget /* = nullptr */) override;
 	QRectF boundingRect() const override;
 
 private:
-	QList<LxGrphicsCurveLineItem*> mvLine;   // 一个ucp 可能有多条line 进入
+	QList<lxQGrphicsCurveLineItem*> mlist_Line;   ///< 一个ucp 可能有多条line 进入
 
 };
 
-// dcp : down connect point 
-class LxGraphicsDCPItem : public QGraphicsItem
+/** dcp : down connect point */
+class lxQGraphicsDCPItem : public QGraphicsItem
 {
 public:
-	LxGraphicsDCPItem(QGraphicsItem*parent = nullptr);
+	lxQGraphicsDCPItem(QGraphicsItem*parent = nullptr);
 	//~LxGraphicsDCPItem();
 	void setDCPText(QString text);
-	void clearLine() { mLine = nullptr; };
+	void clearLine() { mp_line = nullptr; };
 protected:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget /* = nullptr */) override;
 	QRectF boundingRect() const override;
@@ -49,44 +48,44 @@ protected:
 
 
 private:
-	QString mText = "";
-	QPointF mStartPt, mEndPt;
-	LxGrphicsCurveLineItem* mLine = nullptr;   // 一个dcp 只有一条line 出去
+	QString mstr_text = "";
+	QPointF mt_startPt, mt_endPt;
+	lxQGrphicsCurveLineItem* mp_line = nullptr;   ///< 一个dcp 只有一条line 出去
 };
 
 
-// curve line
-class LxGrphicsCurveLineItem :public QGraphicsItem
+/** curve line*/
+class lxQGrphicsCurveLineItem :public QGraphicsItem
 {
 public:
-	LxGrphicsCurveLineItem(LxGraphicsDCPItem* srcItem, LxGraphicsUCPItem*dstItem,QGraphicsItem*parent=nullptr);
+	lxQGrphicsCurveLineItem(lxQGraphicsDCPItem* srcItem, lxQGraphicsUCPItem*dstItem,QGraphicsItem*parent=nullptr);
 
 	enum {Type = UserType + 1};
 	int type()const override { return Type;  };
 
-	void setSrcDstPt(QPointF srcPt, QPointF dstPt) { mSrcPt = srcPt; mDstPt = dstPt; mbValid = true; update(); };
-	void setDstItem(LxGraphicsUCPItem* dstItem) { mDstItem = dstItem; };
+	void setSrcDstPt(QPointF srcPt, QPointF dstPt) { mt_srcPt = srcPt; mt_dstPt = dstPt; mb_valid = true; update(); };
+	void setDstItem(lxQGraphicsUCPItem* dstItem) { mp_dstItem = dstItem; };
 
-	LxGraphicsDCPItem* getSrcItem() { return mSrcItem; };
-	LxGraphicsUCPItem* getDstItem() { return mDstItem; };
+	lxQGraphicsDCPItem* getSrcItem() { return mp_srcItem; };
+	lxQGraphicsUCPItem* getDstItem() { return mp_dstItem; };
 protected:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget /* = nullptr */) override;
 	QRectF boundingRect() const override;
 
 private:
-	LxGraphicsDCPItem* mSrcItem;
-	LxGraphicsUCPItem* mDstItem;
-	QPointF mSrcPt, mDstPt;
-	bool mbValid = false;             // line 是否有效,当有起点和终点的时候才为有效
+	lxQGraphicsDCPItem* mp_srcItem;
+	lxQGraphicsUCPItem* mp_dstItem;
+	QPointF mt_srcPt, mt_dstPt;
+	bool mb_valid = false;             ///< line 是否有效,当有起点和终点的时候才为有效
 };
 
 
 
-// body item  
-class LxGraphicsBodyItem : public QGraphicsItem
+/**body item */ 
+class lxQGraphicsBodyItem : public QGraphicsItem
 {
 public:
-	LxGraphicsBodyItem(int shape=0,QGraphicsItem*parent=nullptr);
+	lxQGraphicsBodyItem(int shape=0,QGraphicsItem*parent=nullptr);
 
 protected:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget /* = nullptr */) override;
@@ -94,14 +93,14 @@ protected:
 
 
 private:
-	int mShape=0; // 0 rect,1 circle
+	int mn_shape=0; ///< 0 rect,1 circle
 };
 
-// viz item 
-class LxGraphicsVizItem : public QGraphicsItem
+/** viz item */
+class lxQGraphicsVizItem : public QGraphicsItem
 {
 public:
-	LxGraphicsVizItem(LxVizItemType itemType,QGraphicsItem*parent = nullptr);
+	lxQGraphicsVizItem(lxQVizItemType itemType,QGraphicsItem*parent = nullptr);
 
 protected:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget /* = nullptr */) override;

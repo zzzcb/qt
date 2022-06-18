@@ -1,25 +1,25 @@
 ﻿#pragma execution_character_set("utf-8")
-#include "lxtreewidget.h"
+#include "lxqtreewidget.h"
 #include "common.h"
 
 #include <QDebug>
 #include <QMouseEvent>
 #include <QtWidgets/QApplication>
 
-LxTreeWidget::LxTreeWidget(QWidget *parent)
+lxQTreeWidget::lxQTreeWidget(QWidget *parent)
 	: QTreeWidget(parent)
 {
 	addItem();
 
 }
 
-LxTreeWidget::~LxTreeWidget()
+lxQTreeWidget::~lxQTreeWidget()
 {
 }
 
-void LxTreeWidget::mouseMoveEvent(QMouseEvent *event)
+void lxQTreeWidget::mouseMoveEvent(QMouseEvent *event)
 {
-	// 不允许父级 tree widget item drag and drop 
+	/** 不允许父级 tree widget item 的 drag and drop 操作*/
 	if (currentItem()->child(0))
 		return;
 
@@ -27,7 +27,7 @@ void LxTreeWidget::mouseMoveEvent(QMouseEvent *event)
 	QTreeWidget::mouseMoveEvent(event);
 }
 
-void LxTreeWidget::addItem()
+void lxQTreeWidget::addItem()
 {
 	QIcon icon;
 	icon.addFile(QString::fromUtf8(":/icons/move.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -36,15 +36,15 @@ void LxTreeWidget::addItem()
 	QTreeWidgetItem *item1 = new QTreeWidgetItem(item);
 	item1->setIcon(0, icon);
 	item1->setText(0, "检查DI");
-	item1->setData(0, vizItemTypeRole, LxVizItemType::CheckDI);
+	item1->setData(0, gn_vizItemTypeRole, lxQVizItemType::CheckDI);
 	QTreeWidgetItem *item2 = new QTreeWidgetItem(item);
 	item2->setIcon(0, icon);
 	item2->setText(0, "等待DI");
-	item2->setData(0, vizItemTypeRole, LxVizItemType::WaitDI);
+	item2->setData(0, gn_vizItemTypeRole, lxQVizItemType::WaitDI);
 	QTreeWidgetItem *item3 = new QTreeWidgetItem(item);
 	item3->setIcon(0, icon);
 	item3->setText(0, "设置DO");
-	item3->setData(0, vizItemTypeRole, LxVizItemType::SetDO);
+	item3->setData(0, gn_vizItemTypeRole, lxQVizItemType::SetDO);
 	QTreeWidgetItem *item4 = new QTreeWidgetItem(this);
 	item4->setText(0, " 基本运动");
 	QTreeWidgetItem *item5 = new QTreeWidgetItem(item4);
@@ -53,17 +53,17 @@ void LxTreeWidget::addItem()
 	QTreeWidgetItem *item6 = new QTreeWidgetItem(item4);
 	item6->setIcon(0, icon);
 	item6->setText(0, "相对移动");
-	item6->setData(0, vizItemTypeRole, LxVizItemType::RelMove);
+	item6->setData(0, gn_vizItemTypeRole, lxQVizItemType::RelMove);
 	QTreeWidgetItem *item7 = new QTreeWidgetItem(item4);
 	item7->setIcon(0, icon);
 	item7->setText(0, "移动");
-	item7->setData(0, vizItemTypeRole, LxVizItemType::Move);
+	item7->setData(0, gn_vizItemTypeRole, lxQVizItemType::Move);
 	QTreeWidgetItem *item8 = new QTreeWidgetItem(this);
 	item8->setText(0, " 工具");
 	QTreeWidgetItem *item9 = new QTreeWidgetItem(item8);
 	item9->setIcon(0, icon);
 	item9->setText(0, "开始");
-	item9->setData(0, vizItemTypeRole, LxVizItemType::Start);
+	item9->setData(0, gn_vizItemTypeRole, lxQVizItemType::Start);
 	QTreeWidgetItem *item10 = new QTreeWidgetItem(item8);
 	item10->setIcon(0, icon);
 	item10->setText(0, "新建子项目");

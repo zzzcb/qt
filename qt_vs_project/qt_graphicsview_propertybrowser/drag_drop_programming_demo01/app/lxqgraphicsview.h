@@ -2,13 +2,13 @@
 
 #include <QGraphicsView>
 
-class LxGraphicsView : public QGraphicsView
+class lxQGraphicsView : public QGraphicsView
 {
 	Q_OBJECT
 
 public:
-	LxGraphicsView(QWidget *parent);
-	~LxGraphicsView();
+	lxQGraphicsView(QWidget *parent);
+	~lxQGraphicsView();
 
 protected:
 	void dragEnterEvent(QDragEnterEvent *event) override;
@@ -25,6 +25,6 @@ private:
 	void scaleView(qreal scaleFactor);
 	void translateViewY(qreal dy);
 
-	bool mbCtrl = false;
+	bool mb_ctrl = false;
 
 };

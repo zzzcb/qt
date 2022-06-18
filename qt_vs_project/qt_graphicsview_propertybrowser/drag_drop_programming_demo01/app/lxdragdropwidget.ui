@@ -27,7 +27,7 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="LxTreeWidget" name="treeWidget">
+       <widget class="lxQTreeWidget" name="treeWidget">
         <property name="styleSheet">
          <string notr="true"/>
         </property>
@@ -48,7 +48,7 @@
        </widget>
        <widget class="QUndoView" name="undoView"/>
       </widget>
-      <widget class="LxGraphicsView" name="graphicsView"/>
+      <widget class="lxQGraphicsView" name="graphicsView"/>
      </widget>
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
@@ -62,14 +62,14 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>LxGraphicsView</class>
+   <class>lxQGraphicsView</class>
    <extends>QGraphicsView</extends>
-   <header>lxgraphicsview.h</header>
+   <header>lxqgraphicsview.h</header>
   </customwidget>
   <customwidget>
-   <class>LxTreeWidget</class>
+   <class>lxQTreeWidget</class>
    <extends>QTreeWidget</extends>
-   <header>lxtreewidget.h</header>
+   <header>lxqtreewidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>

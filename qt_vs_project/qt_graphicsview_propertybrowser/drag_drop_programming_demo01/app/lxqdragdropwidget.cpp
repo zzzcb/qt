@@ -1,10 +1,10 @@
-﻿#include "lxdragdropwidget.h"
+﻿#include "lxqdragdropwidget.h"
 
 #include "commands.h"
 #include <QTreeWidgetItem>
 #include <QDebug>
 
-LxDragDropWidget::LxDragDropWidget(QWidget *parent)
+lxQDragDropWidget::lxQDragDropWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
@@ -16,10 +16,10 @@ LxDragDropWidget::LxDragDropWidget(QWidget *parent)
 	mpUndoStack = new QUndoStack(this);
 	ui.undoView->setStack(mpUndoStack);
 
-	// action 
+	/**action*/
 	mpDeleteAct = new QAction(tr("&Delete"), this);
 	mpDeleteAct->setShortcut(QKeySequence::Delete);
-	connect(mpDeleteAct, &QAction::triggered, this, &LxDragDropWidget::on_deleteAct_triggered);
+	connect(mpDeleteAct, &QAction::triggered, this, &lxQDragDropWidget::on_deleteAct_triggered);
 
 	mpRedoAct = mpUndoStack->createRedoAction(this, tr("redo"));
 	mpRedoAct->setShortcuts(QKeySequence::Redo);
@@ -32,18 +32,18 @@ LxDragDropWidget::LxDragDropWidget(QWidget *parent)
 	this->addAction(mpUndoAct);
 }
 
-LxDragDropWidget::~LxDragDropWidget()
+lxQDragDropWidget::~lxQDragDropWidget()
 {
 
 }
 
-void LxDragDropWidget::on_deleteAct_triggered()
+void lxQDragDropWidget::on_deleteAct_triggered()
 {
 	QGraphicsScene* scene = ui.graphicsView->scene();
 	if (scene->selectedItems().isEmpty())
 		return;
 	
 
-	QUndoCommand *deleteCommand = new RemoveShapeCommand(scene);
+	QUndoCommand *deleteCommand = new lxQRemoveShapeCommand(scene);
 	mpUndoStack->push(deleteCommand);
 }

@@ -2,13 +2,13 @@
 
 #include <QGraphicsScene>
 
-class LxGraphicsScene : public QGraphicsScene
+class lxQGraphicsScene : public QGraphicsScene
 {
 	Q_OBJECT
 
 public:
-	LxGraphicsScene(QObject *parent=nullptr);
-	~LxGraphicsScene();
+	lxQGraphicsScene(QObject *parent=nullptr);
+	~lxQGraphicsScene();
 
 protected:
 	//void drawBackground(QPainter *painter, const QRectF &rect) override;

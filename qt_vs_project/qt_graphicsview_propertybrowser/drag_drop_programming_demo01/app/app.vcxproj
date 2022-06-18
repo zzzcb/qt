@@ -95,15 +95,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="commands.cpp" />
-    <ClCompile Include="lxdragdropwidget.cpp" />
-    <ClCompile Include="lxgraphicsitem.cpp" />
-    <ClCompile Include="lxgraphicsscene.cpp" />
-    <ClCompile Include="lxgraphicsview.cpp" />
-    <ClCompile Include="lxtreewidget.cpp" />
+    <ClCompile Include="lxqdragdropwidget.cpp" />
+    <ClCompile Include="lxqgraphicsitem.cpp" />
+    <ClCompile Include="lxqgraphicsscene.cpp" />
+    <ClCompile Include="lxqgraphicsview.cpp" />
+    <ClCompile Include="lxqtreewidget.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="lxdragdropwidget.h" />
+    <QtMoc Include="lxqdragdropwidget.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="lxdragdropwidget.ui" />
@@ -112,18 +112,18 @@
     <QtRcc Include="app.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="lxgraphicsview.h" />
+    <QtMoc Include="lxqgraphicsview.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="lxgraphicsscene.h" />
+    <QtMoc Include="lxqgraphicsscene.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="lxtreewidget.h" />
+    <QtMoc Include="lxqtreewidget.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commands.h" />
     <ClInclude Include="common.h" />
-    <ClInclude Include="lxgraphicsitem.h" />
+    <ClInclude Include="lxqgraphicsitem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

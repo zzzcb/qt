@@ -1,7 +1,7 @@
-﻿#include "lxgraphicsview.h"
-#include "lxgraphicsscene.h"
-#include "lxtreewidget.h"
-#include "lxgraphicsitem.h"
+﻿#include "lxqgraphicsview.h"
+#include "lxqgraphicsscene.h"
+#include "lxqtreewidget.h"
+#include "lxqgraphicsitem.h"
 
 #include "common.h"
 
@@ -10,14 +10,14 @@
 #include <QSharedPointer>
 
 
-LxGraphicsView::LxGraphicsView(QWidget *parent)
+lxQGraphicsView::lxQGraphicsView(QWidget *parent)
 	: QGraphicsView(parent)
 {
-	LxGraphicsScene* scene = new LxGraphicsScene(this);
+	lxQGraphicsScene* scene = new lxQGraphicsScene(this);
 	scene->setSceneRect(-300, -400, 600, 800);
 	setScene(scene);
 
-	//// 设置scene的背景色为gray,此时会填满整个 view，可以通过重写scene的drawbackgroud来标识scene
+	/**设置scene的背景色为gray,此时会填满整个 view，可以通过重写scene的drawbackgroud来标识scene*/
 	//scene->setBackgroundBrush(Qt::darkGray);
 
 	setAcceptDrops(true);
@@ -25,40 +25,39 @@ LxGraphicsView::LxGraphicsView(QWidget *parent)
 	setTransformationAnchor(QGraphicsView::NoAnchor);
 }
 
-LxGraphicsView::~LxGraphicsView()
+lxQGraphicsView::~lxQGraphicsView()
 {
 }
 
-void LxGraphicsView::dragEnterEvent(QDragEnterEvent *event)
+void lxQGraphicsView::dragEnterEvent(QDragEnterEvent *event)
 {
 	event->setAccepted(true);
 }
 
 
-void LxGraphicsView::dragMoveEvent(QDragMoveEvent *event)
+void lxQGraphicsView::dragMoveEvent(QDragMoveEvent *event)
 {
 
 }
 
-void LxGraphicsView::dropEvent(QDropEvent *event)
+void lxQGraphicsView::dropEvent(QDropEvent *event)
 {
-	LxTreeWidget* srcWidget = qobject_cast<LxTreeWidget*>(event->source());
+	lxQTreeWidget* srcWidget = qobject_cast<lxQTreeWidget*>(event->source());
 	if (!srcWidget)
 		return;
 
-	QVariant vizItemType = srcWidget->currentItem()->data(0, vizItemTypeRole);
+	QVariant vizItemType = srcWidget->currentItem()->data(0, gn_vizItemTypeRole);
 
 	if (!vizItemType.isValid())
 		return;
 
 	//qDebug() << "source is " << srcWidget->currentItem()->text(0);
 	//qDebug() << " role data is " << srcWidget->currentItem()->data(0, itemTypeRole);
-
 	//qDebug() << "viz item type is " << vizItemType;
 
 	QPointF pos = mapToScene(event->pos());
 
-	LxGraphicsVizItem* vizItem = new LxGraphicsVizItem(LxVizItemType(vizItemType.toInt()));
+	lxQGraphicsVizItem* vizItem = new lxQGraphicsVizItem(lxQVizItemType(vizItemType.toInt()));
 	vizItem->setPos(pos);
 	scene()->addItem(vizItem);
 
@@ -66,11 +65,11 @@ void LxGraphicsView::dropEvent(QDropEvent *event)
 
 }
 
-void LxGraphicsView::keyPressEvent(QKeyEvent *event)
+void lxQGraphicsView::keyPressEvent(QKeyEvent *event)
 {
 	if (event->key() == Qt::Key_Control)
 	{
-		mbCtrl = true;
+		mb_ctrl = true;
 	}
 	switch (event->key())
 	{
@@ -83,25 +82,27 @@ void LxGraphicsView::keyPressEvent(QKeyEvent *event)
 
 }
 
-void LxGraphicsView::keyReleaseEvent(QKeyEvent *event)
+void lxQGraphicsView::keyReleaseEvent(QKeyEvent *event)
 {
 	if (event->key() == Qt::Key_Control)
 	{
-		mbCtrl = false;
+		mb_ctrl = false;
 	}
 }
 
-void LxGraphicsView::wheelEvent(QWheelEvent *event)
+void lxQGraphicsView::wheelEvent(QWheelEvent *event)
 {
-	// ctrl +  zoom in 
-	// ctrl -  zoom out 
-	if (mbCtrl)
+	/**
+		ctrl +  zoom in
+		ctrl -  zoom out
+	*/
+	if (mb_ctrl)
 		scaleView(std::pow(2, event->delta() / 240.0));
 	else
 		translateViewY(event->delta()/10.);
 }
 
-void LxGraphicsView::mousePressEvent(QMouseEvent *event)
+void lxQGraphicsView::mousePressEvent(QMouseEvent *event)
 {
 	// test curve line 
 	//for (auto item : scene()->items())
@@ -120,7 +121,7 @@ void LxGraphicsView::mousePressEvent(QMouseEvent *event)
 	QGraphicsView::mousePressEvent(event);
 }
 
-void LxGraphicsView::scaleView(qreal scaleFactor)
+void lxQGraphicsView::scaleView(qreal scaleFactor)
 {
 	qreal factor = transform().scale(scaleFactor, scaleFactor).mapRect(QRectF(0, 0, 1, 1)).width();
 
@@ -130,7 +131,7 @@ void LxGraphicsView::scaleView(qreal scaleFactor)
 	scale(scaleFactor, scaleFactor);
 }
 
-void LxGraphicsView::translateViewY(qreal dy)
+void lxQGraphicsView::translateViewY(qreal dy)
 {
 	translate(0,dy);
 }

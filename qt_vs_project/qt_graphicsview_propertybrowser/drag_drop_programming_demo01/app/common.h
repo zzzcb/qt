@@ -1,8 +1,8 @@
 ﻿#pragma once
 
-static int vizItemTypeRole = Qt::UserRole + 1;
+static int gn_vizItemTypeRole = Qt::UserRole + 1;
 
-enum LxVizItemType
+enum lxQVizItemType
 {
 	Start,
 	CheckDI,

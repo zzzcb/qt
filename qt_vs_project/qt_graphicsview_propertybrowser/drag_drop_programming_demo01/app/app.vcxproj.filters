@@ -26,36 +26,36 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lxdragdropwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lxgraphicsview.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lxgraphicsscene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lxtreewidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lxgraphicsitem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="commands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqdragdropwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqgraphicsscene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqgraphicsview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqtreewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqgraphicsitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="lxdragdropwidget.h">
+    <QtMoc Include="lxqdragdropwidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="lxgraphicsview.h">
+    <QtMoc Include="lxqgraphicsscene.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="lxgraphicsscene.h">
+    <QtMoc Include="lxqgraphicsview.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="lxtreewidget.h">
+    <QtMoc Include="lxqtreewidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -73,10 +73,10 @@
     <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="lxgraphicsitem.h">
+    <ClInclude Include="commands.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="commands.h">
+    <ClInclude Include="lxqgraphicsitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

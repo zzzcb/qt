@@ -3,11 +3,11 @@
 #include <QUndoCommand>
 #include <QGraphicsScene>
 
-class RemoveShapeCommand : public QUndoCommand
+class lxQRemoveShapeCommand : public QUndoCommand
 {
 
 public:
-	RemoveShapeCommand(QGraphicsScene *_scene, QUndoCommand *parent=nullptr);
+	lxQRemoveShapeCommand(QGraphicsScene *_scene, QUndoCommand *parent=nullptr);
 
 	void redo() override;
 	void undo() override;
@@ -16,3 +16,5 @@ private:
 	QList<QGraphicsItem *> mlist_selectedItems;
 
 };
+
+
