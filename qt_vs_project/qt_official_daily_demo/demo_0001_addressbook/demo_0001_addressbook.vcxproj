@@ -85,9 +85,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtMoc Include="demo.h" />
+    <ClCompile Include="adddialog.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="newaddresstab.cpp" />
     <ClCompile Include="addresswidget.cpp" />
-    <ClCompile Include="demo.cpp" />
     <ClCompile Include="learnqtabbar.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -96,6 +97,15 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="learnqtabbar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mainwindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="newaddresstab.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="adddialog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

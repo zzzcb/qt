@@ -23,16 +23,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="demo.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="demo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <QtMoc Include="addresswidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="learnqtabbar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="newaddresstab.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="adddialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -44,6 +47,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="learnqtabbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="newaddresstab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="adddialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
