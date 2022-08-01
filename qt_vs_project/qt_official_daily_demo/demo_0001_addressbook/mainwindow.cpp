@@ -2,6 +2,7 @@
 
 #include <QDebug>
 #include <QMenuBar>
+#include <QFileDialog>
 
 MainWindow::MainWindow()
 	: mp_addressWidget(new AddressWidget)
@@ -10,6 +11,8 @@ MainWindow::MainWindow()
 	setCentralWidget(mp_addressWidget);
 	createMenus();
 	setWindowTitle(tr("address book"));
+
+	connect(mp_addressWidget, &AddressWidget::selectionChanged, this, &MainWindow::updateActions);
 
 }
 
@@ -23,14 +26,38 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_openAct_triggered()
 {
-
+	QString fileName = QFileDialog::getOpenFileName(this);
+	if(!fileName.isEmpty())
+		mp_addressWidget->readFromFile(fileName);
 }
 
 void MainWindow::on_saveAct_triggered()
 {
-
+	QString fileName = QFileDialog::getSaveFileName(this);
+	if(!fileName.isEmpty())
+		mp_addressWidget->writeToFile(fileName);
 }
 
+
+
+
+void MainWindow::updateActions(const QItemSelection &selected)
+{
+	qDebug() << "update actions ";
+	
+	QModelIndexList indexes = selected.indexes();
+
+	if (!indexes.isEmpty())
+	{
+		mp_removeAct->setEnabled(true);
+		mp_editAct->setEnabled(true);
+	}
+	else 
+	{
+		mp_removeAct->setEnabled(false);
+		mp_editAct->setEnabled(false);
+	}
+}
 
 void MainWindow::createMenus()
 {
@@ -51,11 +78,17 @@ void MainWindow::createMenus()
 	QMenu* toolMenu = menuBar()->addMenu(tr("&Tools"));
 	QAction* addAct = new QAction(tr("&Add"), this);
 	toolMenu->addAction(addAct);
-	QAction* editAct = new QAction(tr("&Edit"), this);
-	toolMenu->addAction(editAct);
+	connect(addAct, &QAction::triggered, mp_addressWidget, &AddressWidget::showAddEntryDialog);
+	mp_editAct = new QAction(tr("&Edit"), this);
+	mp_editAct->setEnabled(false);  // 初始状态要为false
+	toolMenu->addAction(mp_editAct);
+	connect(mp_editAct, &QAction::triggered, mp_addressWidget, &AddressWidget::editEntry);
 	toolMenu->addSeparator();
-	QAction* removeAct = new QAction(tr("&Remove"), this);
-	toolMenu->addAction(removeAct);
+	mp_removeAct = new QAction(tr("&Remove"), this);
+	mp_removeAct->setEnabled(false);  // 初始状态要为false
+	toolMenu->addAction(mp_removeAct);
+	connect(mp_removeAct, &QAction::triggered, mp_addressWidget, &AddressWidget::removeEntry);
+
 
 
 }

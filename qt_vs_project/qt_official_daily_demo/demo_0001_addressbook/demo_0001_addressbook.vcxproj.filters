@@ -38,6 +38,9 @@
     <QtMoc Include="adddialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="tablemodel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,6 +59,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="adddialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tablemodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

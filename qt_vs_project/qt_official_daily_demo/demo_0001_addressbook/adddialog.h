@@ -18,6 +18,8 @@ public:
 	QString name();
 	QString address();
 
+	void editAddress(const QString &name,const QString &address);
+
 private:
 	QLineEdit *mp_nameText;
 	QTextEdit *mp_addressText;

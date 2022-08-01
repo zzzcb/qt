@@ -1,8 +1,10 @@
 ﻿#pragma once
 
 #include "newaddresstab.h"
+#include "tablemodel.h"
 
 #include <QTabWidget>
+#include <QItemSelection>
 
 class AddressWidget : public QTabWidget
 {
@@ -12,9 +14,29 @@ public:
 	AddressWidget(QWidget *parent=nullptr);
 	~AddressWidget();
 
+	void readFromFile(const QString& fileName);
+	void writeToFile(const QString& fileName);
+
+
+public slots:
+	void showAddEntryDialog();
+	void removeEntry();
+	void editEntry();
+
+
+private slots:
+	void addEntry(const QString& name, const QString& address);
+
+
+signals:
+	void selectionChanged(const QItemSelection &selected);
 
 private:
-	//TableModel * mp_tableModel;
+
+	void setUpTabs();
+
+
+	TableModel * mp_tableModel;
 	NewAddressTab* mp_newAddressTab;
 
 };

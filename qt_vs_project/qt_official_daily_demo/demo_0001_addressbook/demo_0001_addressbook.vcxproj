@@ -91,6 +91,7 @@
     <ClCompile Include="addresswidget.cpp" />
     <ClCompile Include="learnqtabbar.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tablemodel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="addresswidget.h" />
@@ -106,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="adddialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="tablemodel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

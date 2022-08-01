@@ -50,3 +50,10 @@ QString AddDialog::address()
 {
 	return mp_addressText->toPlainText();
 }
+
+void AddDialog::editAddress(const QString &name, const QString &address)
+{
+	mp_nameText->setText(name);
+	mp_addressText->setText(address);
+	mp_nameText->setReadOnly(true);
+}
