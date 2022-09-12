@@ -5,13 +5,13 @@ from orangewidget import gui
 
 class IntNumber(OWBaseWidget):
     # Widget's name as displayed in the canvas
-    name = "整数"
+    name = "整数2"
     # Short widget description
-    description = "用户可以输入一个整型数字"
+    description = "用户可以输入一个整型数字2"
 
     # An icon resource file path for this widget
     # (a path relative to the module where this widget is defined)
-    icon = "orange.png"
+    icon = "orange.ico"
 
     # Widget's outputs; here, a single output named "Number", of type int
     class Outputs:
