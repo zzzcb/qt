@@ -1,0 +1,2 @@
+include orangecontrib/example/tutorials/*.ows
+include orangecontrib/example/widgets/icons/*
