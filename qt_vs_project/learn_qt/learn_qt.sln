@@ -77,6 +77,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_031_qt_coord", "zcb_031
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_032_mainwindow_createPopupMenu", "zcb_032_mainwindow_createPopupMenu\zcb_032_mainwindow_createPopupMenu.vcxproj", "{DC3E270B-666A-4660-B3CC-23BF84D13361}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_032_qt_shortcut", "zcb_032_qt_shortcut\zcb_032_qt_shortcut.vcxproj", "{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_033_url", "zcb_033_url\zcb_033_url.vcxproj", "{F0D88084-7CC5-4B84-B1C7-3062EF138B58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -308,6 +312,18 @@ Global
 		{DC3E270B-666A-4660-B3CC-23BF84D13361}.Release|x64.ActiveCfg = Release|x64
 		{DC3E270B-666A-4660-B3CC-23BF84D13361}.Release|x64.Build.0 = Release|x64
 		{DC3E270B-666A-4660-B3CC-23BF84D13361}.Release|x86.ActiveCfg = Release|x64
+		{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}.Debug|x64.ActiveCfg = Debug|x64
+		{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}.Debug|x64.Build.0 = Debug|x64
+		{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}.Debug|x86.ActiveCfg = Debug|x64
+		{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}.Release|x64.ActiveCfg = Release|x64
+		{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}.Release|x64.Build.0 = Release|x64
+		{CCF90D1B-C646-4B35-A06E-58F3BEB1DCEC}.Release|x86.ActiveCfg = Release|x64
+		{F0D88084-7CC5-4B84-B1C7-3062EF138B58}.Debug|x64.ActiveCfg = Debug|x64
+		{F0D88084-7CC5-4B84-B1C7-3062EF138B58}.Debug|x64.Build.0 = Debug|x64
+		{F0D88084-7CC5-4B84-B1C7-3062EF138B58}.Debug|x86.ActiveCfg = Debug|x64
+		{F0D88084-7CC5-4B84-B1C7-3062EF138B58}.Release|x64.ActiveCfg = Release|x64
+		{F0D88084-7CC5-4B84-B1C7-3062EF138B58}.Release|x64.Build.0 = Release|x64
+		{F0D88084-7CC5-4B84-B1C7-3062EF138B58}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
