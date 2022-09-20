@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>propagation-custom.png</file>
+    </qresource>
+</RCC>
