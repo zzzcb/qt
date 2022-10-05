@@ -83,6 +83,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_033_url", "zcb_033_url\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_034_qframe", "zcb_034_qframe\zcb_034_qframe.vcxproj", "{06E002C4-3E2A-43D6-9500-71885FE8324B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zcb_035_qapplicaiton_options", "zcb_035_qapplicaiton_options\zcb_035_qapplicaiton_options.vcxproj", "{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -332,6 +334,12 @@ Global
 		{06E002C4-3E2A-43D6-9500-71885FE8324B}.Release|x64.ActiveCfg = Release|x64
 		{06E002C4-3E2A-43D6-9500-71885FE8324B}.Release|x64.Build.0 = Release|x64
 		{06E002C4-3E2A-43D6-9500-71885FE8324B}.Release|x86.ActiveCfg = Release|x64
+		{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}.Debug|x64.ActiveCfg = Debug|x64
+		{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}.Debug|x64.Build.0 = Debug|x64
+		{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}.Debug|x86.ActiveCfg = Debug|x64
+		{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}.Release|x64.ActiveCfg = Release|x64
+		{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}.Release|x64.Build.0 = Release|x64
+		{9C8F07FB-80AF-48E4-AD30-6ED2F9B1EA26}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
