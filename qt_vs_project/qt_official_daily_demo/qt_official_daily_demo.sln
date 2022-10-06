@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo_0007_bars", "demo_0007
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo_0008_heartrate_game", "demo_0008_heartrate_game\demo_0008_heartrate_game.vcxproj", "{E3E4A17F-332A-4BBD-A156-66B8F53003B2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo_0009_textedit", "demo_0009_textedit\demo_0009_textedit.vcxproj", "{B3ACB1F8-406E-4863-9CB4-637744959BD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -107,6 +109,12 @@ Global
 		{E3E4A17F-332A-4BBD-A156-66B8F53003B2}.Release|x64.ActiveCfg = Release|x64
 		{E3E4A17F-332A-4BBD-A156-66B8F53003B2}.Release|x64.Build.0 = Release|x64
 		{E3E4A17F-332A-4BBD-A156-66B8F53003B2}.Release|x86.ActiveCfg = Release|x64
+		{B3ACB1F8-406E-4863-9CB4-637744959BD4}.Debug|x64.ActiveCfg = Debug|x64
+		{B3ACB1F8-406E-4863-9CB4-637744959BD4}.Debug|x64.Build.0 = Debug|x64
+		{B3ACB1F8-406E-4863-9CB4-637744959BD4}.Debug|x86.ActiveCfg = Debug|x64
+		{B3ACB1F8-406E-4863-9CB4-637744959BD4}.Release|x64.ActiveCfg = Release|x64
+		{B3ACB1F8-406E-4863-9CB4-637744959BD4}.Release|x64.Build.0 = Release|x64
+		{B3ACB1F8-406E-4863-9CB4-637744959BD4}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
