@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LxDragDropWidget</class>
+ <widget class="QWidget" name="LxDragDropWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>915</width>
+    <height>624</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LxDragDropWidget</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QSplitter" name="splitter_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="lxQTreeWidget" name="treeWidget">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="dragEnabled">
+         <bool>true</bool>
+        </property>
+        <property name="indentation">
+         <number>10</number>
+        </property>
+        <property name="headerHidden">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="lxQUndoView" name="undoView"/>
+      </widget>
+      <widget class="lxQGraphicsView" name="graphicsView"/>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>lxQGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>lxqgraphicsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>lxQTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>lxqtreewidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>lxQUndoView</class>
+   <extends>QUndoView</extends>
+   <header>lxqundoview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="app.qrc"/>
+ </resources>
+ <connections/>
+</ui>
