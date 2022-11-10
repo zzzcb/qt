@@ -46,10 +46,16 @@
     <ClCompile Include="qtvariantproperty.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="customproperty.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="lxqtpropertyvalidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqtpropertymanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lxqtpropertyfactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -87,7 +93,13 @@
     <QtMoc Include="qtvariantproperty.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="customproperty.h">
+    <QtMoc Include="lxqtpropertymanager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="lxqtpropertyfactory.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="lxqtpropertyvalidator.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

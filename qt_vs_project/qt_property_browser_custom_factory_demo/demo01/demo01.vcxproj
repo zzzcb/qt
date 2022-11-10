@@ -85,11 +85,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="customproperty.cpp" />
+    <ClCompile Include="lxqtpropertyfactory.cpp" />
+    <ClCompile Include="lxqtpropertymanager.cpp" />
     <ClCompile Include="qtbuttonpropertybrowser.cpp" />
     <ClCompile Include="qtgroupboxpropertybrowser.cpp" />
     <ClCompile Include="qtpropertybrowser.cpp" />
     <ClCompile Include="qtpropertybrowserutils.cpp" />
+    <ClCompile Include="lxqtpropertyvalidator.cpp" />
     <ClCompile Include="qtvariantproperty.cpp" />
     <QtMoc Include="qttreepropertybrowser.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
@@ -157,9 +159,13 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="customproperty.h">
+    <QtMoc Include="lxqtpropertymanager.h">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">output</DynamicSource>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="lxqtpropertyfactory.h" />
+    <QtMoc Include="lxqtpropertyvalidator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

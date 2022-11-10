@@ -1,4 +1,4 @@
-﻿#include "customproperty.h"
+﻿#include "lxqtpropertymanager.h"
 
 lxQtSpacePointManager::lxQtSpacePointManager(QObject *parent /*= 0*/)
 	:QtAbstractPropertyManager(parent)

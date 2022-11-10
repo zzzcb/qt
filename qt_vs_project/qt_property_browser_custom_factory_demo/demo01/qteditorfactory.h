@@ -392,27 +392,27 @@ private:
 
 /**=============================lxQtFactory===========================================*/
 
-class lxQtFilePathFactoryPrivate;
-
-class lxQtFilePathFactory : public QtAbstractEditorFactory<QtStringPropertyManager>
-{
-	Q_OBJECT
-public:
-	lxQtFilePathFactory(QObject *parent = 0);
-	~lxQtFilePathFactory();
-protected:
-	void connectPropertyManager(QtStringPropertyManager *manager);
-	QWidget *createEditor(QtStringPropertyManager *manager, QtProperty *property,
-		QWidget *parent);
-	void disconnectPropertyManager(QtStringPropertyManager *manager);
-private:
-	QScopedPointer<lxQtFilePathFactoryPrivate> d_ptr;
-	Q_DECLARE_PRIVATE(lxQtFilePathFactory)
-	Q_DISABLE_COPY(lxQtFilePathFactory)
-	Q_PRIVATE_SLOT(d_func(), void slotPropertyChanged(QtProperty *, const QString &))
-	Q_PRIVATE_SLOT(d_func(), void slotSetValue(const QString &))
-	Q_PRIVATE_SLOT(d_func(), void slotEditorDestroyed(QObject *))
-};
+//class lxQtFilePathFactoryPrivate;
+//
+//class lxQtFilePathFactory : public QtAbstractEditorFactory<QtStringPropertyManager>
+//{
+//	Q_OBJECT
+//public:
+//	lxQtFilePathFactory(QObject *parent = 0);
+//	~lxQtFilePathFactory();
+//protected:
+//	void connectPropertyManager(QtStringPropertyManager *manager);
+//	QWidget *createEditor(QtStringPropertyManager *manager, QtProperty *property,
+//		QWidget *parent);
+//	void disconnectPropertyManager(QtStringPropertyManager *manager);
+//private:
+//	QScopedPointer<lxQtFilePathFactoryPrivate> d_ptr;
+//	Q_DECLARE_PRIVATE(lxQtFilePathFactory)
+//	Q_DISABLE_COPY(lxQtFilePathFactory)
+//	Q_PRIVATE_SLOT(d_func(), void slotPropertyChanged(QtProperty *, const QString &))
+//	Q_PRIVATE_SLOT(d_func(), void slotSetValue(const QString &))
+//	Q_PRIVATE_SLOT(d_func(), void slotEditorDestroyed(QObject *))
+//};
 
 QT_END_NAMESPACE
 

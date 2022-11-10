@@ -1854,9 +1854,6 @@ void QtAbstractPropertyBrowser::removeProperty(QtProperty *property)
 QWidget *QtAbstractPropertyBrowser::createEditor(QtProperty *property,
                 QWidget *parent)
 {
-	qDebug() << "property " << property;
-	qDebug() << "parent " << parent;
-
     QtAbstractEditorFactoryBase *factory = 0;
     QtAbstractPropertyManager *manager = property->propertyManager();
 
