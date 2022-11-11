@@ -1,6 +1,0 @@
-﻿  Reading Qt configuration (D:/software/qt_5_13_1/5.13.1/msvc2017_64/bin/qmake)
-  uic ui\demo.ui
-  demo.cpp
-  main.cpp
-  moc_demo.cpp
-  zcb_005_else_input_and_else_display.vcxproj -> D:\project\qt_vs\learn_qt\x64\Release\zcb_005_else_input_and_else_display.exe

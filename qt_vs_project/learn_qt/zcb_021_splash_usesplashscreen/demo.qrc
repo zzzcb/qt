@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/Demo">
-        <file>lxrobot.png</file>
-        <file>linxrobot.png</file>
-    </qresource>
-</RCC>
