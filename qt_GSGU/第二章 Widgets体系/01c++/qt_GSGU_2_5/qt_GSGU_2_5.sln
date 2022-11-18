@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_00_qss_demo", "qt_00_qss_demo\qt_00_qss_demo.vcxproj", "{62F09760-13AB-4CB1-99DB-8EDE0D20DC7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62F09760-13AB-4CB1-99DB-8EDE0D20DC7B}.Debug|x64.ActiveCfg = Debug|x64
+		{62F09760-13AB-4CB1-99DB-8EDE0D20DC7B}.Debug|x64.Build.0 = Debug|x64
+		{62F09760-13AB-4CB1-99DB-8EDE0D20DC7B}.Release|x64.ActiveCfg = Release|x64
+		{62F09760-13AB-4CB1-99DB-8EDE0D20DC7B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A34391E-547D-495B-8509-47C490F65168}
+	EndGlobalSection
+EndGlobal

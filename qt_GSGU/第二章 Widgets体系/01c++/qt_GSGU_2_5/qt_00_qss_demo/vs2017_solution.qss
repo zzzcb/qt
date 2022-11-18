@@ -1,0 +1,110 @@
+*{
+	font-family:Microsoft YaHei;
+	color:#f1f1f1;
+	outline: 0;
+}
+
+QFrame#upFrame {
+    background: #2d2d30;
+}
+QFrame#downFrame {
+    background: #252526;
+}
+
+QPushButton {
+    border: 1px solid #515151;
+	background-color:#3f3f46;
+	color:#f1f1f1;
+	padding: 0px 0px;
+	width: 70px;
+	height: 20px;
+	font-size: 12px;
+}
+QPushButton:hover{
+	border-color: #007acc;
+}
+QPushButton:pressed
+{
+    border-width: 1px;      
+    background-color: #007acc;
+    border-color: #007acc;
+}
+QPushButton:focus, QPushButton:default {
+    border-color: #007acc; 
+}
+
+QLineEdit {
+    background: #3f3f46;
+    selection-background-color: #35495c;
+	border: 1px solid #3f3f46;
+    padding: 0 0px;
+	height:17px;
+	font-size: 12px;
+}
+QLineEdit:hover{
+}
+QLineEdit:focus{
+	border: 1px solid #007acc;
+}
+
+
+
+QTreeView {
+    background: #2d2d30;
+	border: none;
+	margin: 0px;
+	padding: 2px;
+	outline: 0;
+}
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+    border-image: none;
+	image: url(:/images/close.png);	
+}
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+        border-image: none;
+		image: url(:/images/open.png);
+}
+
+QTreeView::item:selected
+{
+	background:  #007acc;
+	color: #f1f1f1;
+}
+
+QTreeView::item:hover:!selected
+{
+	background: none;
+}
+
+QListView {
+    background: #252526;
+	icon-size:30px 30px;	
+	border: none;
+	margin: 0px;
+	padding: 3px;
+}
+QListView::item
+{
+	padding:0px;
+}
+QListView::item:selected
+{
+	background:  #007acc;
+	color: #f1f1f1;
+	padding:0px 0px;
+}
+
+QListView::item:hover:!selected
+{
+	background: none;
+}
+
+
+QTextEdit {
+    background: #2d2d30;
+	border: none;
+	margin: 0px;
+	padding: 5px;
+}

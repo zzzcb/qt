@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>vs2017_solution.qss</file>
+        <file>images/binpicking.png</file>
+        <file>images/close.png</file>
+        <file>images/deptz_mix.png</file>
+        <file>images/deptz_single.png</file>
+        <file>images/open.png</file>
+        <file>images/ptz_mix.png</file>
+        <file>images/ptz_single.png</file>
+        <file>images/special_template.png</file>
+    </qresource>
+</RCC>
