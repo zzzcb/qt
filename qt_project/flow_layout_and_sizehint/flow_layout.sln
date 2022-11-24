@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1585
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flow_layout", "flow_layout\flow_layout.vcxproj", "{3375F9D4-C2EA-4D62-9A1F-F381DC2267A0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sizehint_minimumsizehint", "sizehint_minimumsizehint\sizehint_minimumsizehint.vcxproj", "{6F163BAD-533F-4D26-BE87-D74016F516D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3375F9D4-C2EA-4D62-9A1F-F381DC2267A0}.Debug|x64.ActiveCfg = Debug|x64
+		{3375F9D4-C2EA-4D62-9A1F-F381DC2267A0}.Debug|x64.Build.0 = Debug|x64
+		{3375F9D4-C2EA-4D62-9A1F-F381DC2267A0}.Release|x64.ActiveCfg = Release|x64
+		{3375F9D4-C2EA-4D62-9A1F-F381DC2267A0}.Release|x64.Build.0 = Release|x64
+		{6F163BAD-533F-4D26-BE87-D74016F516D2}.Debug|x64.ActiveCfg = Debug|x64
+		{6F163BAD-533F-4D26-BE87-D74016F516D2}.Debug|x64.Build.0 = Debug|x64
+		{6F163BAD-533F-4D26-BE87-D74016F516D2}.Release|x64.ActiveCfg = Release|x64
+		{6F163BAD-533F-4D26-BE87-D74016F516D2}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2168764C-1A96-44A8-8DDB-80515F601599}
+	EndGlobalSection
+EndGlobal
