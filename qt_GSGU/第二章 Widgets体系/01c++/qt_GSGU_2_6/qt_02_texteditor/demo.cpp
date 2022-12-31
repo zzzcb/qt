@@ -1,4 +1,4 @@
-ï»¿#include "demo.h"
+#include "demo.h"
 
 #include <QFile>
 #include <QTextCodec>
@@ -15,10 +15,13 @@
 Demo::Demo(QWidget *parent)
     : QMainWindow(parent)
 {
+    //ui.setupUi(this);	
+
 	setWindowTitle(QCoreApplication::applicationName());
 
 	m_pTextEdit = new QTextEdit(this);
-	setCentralWidget(m_pTextEdit);
+	//connect(m_pTextEdit,&QTextEdit::currentCharFormatChanged,this,)
+	//connect(m_pTextEdit,&QTextEdit::cursorPositionChanged,this,)
 
 	setToolButtonStyle(Qt::ToolButtonFollowStyle);
 	
@@ -28,9 +31,14 @@ Demo::Demo(QWidget *parent)
 	setupTextFormatAct();
 	setupTextFontAct();
 
-	QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
-	helpMenu->addAction(tr("About"), this, &Demo::about);
-	helpMenu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
+	{
+		QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
+		helpMenu->addAction(tr("About"), this, &Demo::about);
+		helpMenu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
+	}
+
+
+	setCentralWidget(m_pTextEdit);
 }
 
 Demo::~Demo()
@@ -38,7 +46,7 @@ Demo::~Demo()
 
 bool Demo::load(const QString& fileName)
 {
-	/**æ–‡ä»¶æ“ä½œ:1,æ˜¯å¦å­˜åœ¨ 2,æ˜¯å¦æ‰“å¼€æˆåŠŸ*/
+	/**ÎÄ¼ş²Ù×÷:1,ÊÇ·ñ´æÔÚ 2,ÊÇ·ñ´ò¿ª³É¹¦*/
 	if (!QFile::exists(fileName))
 		return false;
 
@@ -47,8 +55,8 @@ bool Demo::load(const QString& fileName)
 		return false;
 
 	QByteArray data = file.readAll();
-	QTextCodec *codec = QTextCodec::codecForHtml(data); ///< è·å–htmlç¼–ç 
-	QString strHtml =  codec->toUnicode(data);          ///< å°†dataçš„ç¼–ç å˜ä¸ºunicode 
+	QTextCodec *codec = QTextCodec::codecForHtml(data); ///< »ñÈ¡html±àÂë
+	QString strHtml =  codec->toUnicode(data);          ///< ½«dataµÄ±àÂë±äÎªunicode 
 	 
 	if (Qt::mightBeRichText(strHtml))					/// from QTextDocument defaine 
 		m_pTextEdit->setHtml(strHtml);
@@ -135,13 +143,15 @@ void Demo::setupFileAct()
 	QToolBar* fileToolBar = addToolBar("File Tool Bar");
 
 	/**new action*/
-	const QIcon newIcon = QIcon(":/images/filenew.png");
+	/**Ê¹ÓÃ±ê×¼µÄÄ¬ÈÏicon,Èç¹ûÃ»ÓĞÔÙÓÃ×Ô¼ºµÄµÄÍ¼±ê QIcon::fromTheme Ö÷ÒªÊÇÎªlinux·şÎñ,linuxÉÏÌá¹©ÁËÒ»Ì×±ê×¼Í¼±ê¿â https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html*/
+	const QIcon newIcon = QIcon::fromTheme("document-new", QIcon(":/images/filenew.png"));
 	QAction *action = fileMenu->addAction(newIcon, tr("&New"), this, &Demo::newFile);
 	fileToolBar->addAction(action);
 	action->setShortcut(QKeySequence::New);
 
+
 	/**open action*/
-	const QIcon openIcon = QIcon(":/images/fileopen.png");
+	const QIcon openIcon = QIcon::fromTheme("document-open", QIcon(":/images/fileopen.png"));
 	action = fileMenu->addAction(openIcon, tr("&Open..."), this, &Demo::openFile);
 	fileToolBar->addAction(action);
 	action->setShortcut(QKeySequence::Open);
@@ -149,7 +159,7 @@ void Demo::setupFileAct()
 	fileMenu->addSeparator();
 
 	/**save action*/
-	const QIcon saveIcon = QIcon(":/images/filesave.png");
+	const QIcon saveIcon = QIcon::fromTheme("document-save", QIcon(":/images/filesave.png"));
 	action = fileMenu->addAction(saveIcon, tr("&Save..."), this, &Demo::saveFile);
 	fileToolBar->addAction(action);
 	action->setShortcut(QKeySequence::Save);
@@ -171,24 +181,25 @@ void Demo::setupEditAct()
 	QToolBar* editToolBar = addToolBar("Edit Tool Bar");
 
 	/**cut action*/
-	const QIcon cutIcon = QIcon(":/images/editcut.png");
+	const QIcon cutIcon = QIcon::fromTheme("edit-cut", QIcon(":/images/editcut.png"));
 	m_pCutAct = editMenu->addAction(cutIcon, tr("Cu&t"), m_pTextEdit,&QTextEdit::cut);
 	editToolBar->addAction(m_pCutAct);
 	m_pCutAct->setShortcut(QKeySequence::Cut);
 
 	/**copy action*/
-	const QIcon copyIcon = QIcon(":/images/editcopy.png");
+	const QIcon copyIcon = QIcon::fromTheme("edit-copy", QIcon(":/images/editcopy.png"));
 	m_pCopyAct = editMenu->addAction(copyIcon, tr("&Copy"), m_pTextEdit, &QTextEdit::copy);
 	editToolBar->addAction(m_pCopyAct);
 	m_pCopyAct->setShortcut(QKeySequence::Copy);
 
 	/**paste action*/
-	const QIcon pasteIcon = QIcon(":/images/editpaste.png");
+	const QIcon pasteIcon = QIcon::fromTheme("edit-paste", QIcon(":/images/editpaste.png"));
 	m_pPasteAct = editMenu->addAction(pasteIcon, tr("&Paste"), m_pTextEdit, &QTextEdit::paste);
 	editToolBar->addAction(m_pPasteAct);
 	m_pPasteAct->setShortcut(QKeySequence::Paste);
 	if (const QMimeData *md = QApplication::clipboard()->mimeData())
 		m_pPasteAct->setEnabled(md->hasText());
+
 }
 
 void Demo::setupTextFormatAct()
@@ -208,7 +219,7 @@ void Demo::setupTextFormatAct()
 
 	/**---*/
 
-	const QIcon boldIcon =  QIcon(":images/textbold.png");
+	const QIcon boldIcon = QIcon::fromTheme("format-text-bold", QIcon(":images/textbold.png"));
 	m_pTextBoldAct = formatMenu->addAction(boldIcon, tr("&Bold"), this, &Demo::boldText);
 	m_pTextBoldAct->setShortcut(Qt::CTRL + Qt::Key_B);
 	QFont bold;
@@ -217,7 +228,7 @@ void Demo::setupTextFormatAct()
 	formatToolBar->addAction(m_pTextBoldAct);
 	m_pTextBoldAct->setCheckable(true);
 
-	const QIcon italicIcon =  QIcon(":images/textitalic.png");
+	const QIcon italicIcon = QIcon::fromTheme("format-text-italic", QIcon(":images/textitalic.png"));
 	m_pTextItalicAct = formatMenu->addAction(italicIcon, tr("&Italic"), this, &Demo::italicText);
 	m_pTextItalicAct->setPriority(QAction::LowPriority);
 	m_pTextItalicAct->setShortcut(Qt::CTRL + Qt::Key_I);
@@ -227,7 +238,7 @@ void Demo::setupTextFormatAct()
 	formatToolBar->addAction(m_pTextItalicAct);
 	m_pTextItalicAct->setCheckable(true);
 
-	const QIcon underlineIcon = QIcon(":images/textunder.png");
+	const QIcon underlineIcon = QIcon::fromTheme("format-text-underline", QIcon(":images/textunder.png"));
 	m_pTextUnderlineAct = formatMenu->addAction(underlineIcon, tr("&Underline"), this, &Demo::underlineText);
 	m_pTextUnderlineAct->setShortcut(Qt::CTRL + Qt::Key_U);
 	m_pTextUnderlineAct->setPriority(QAction::LowPriority);
@@ -241,17 +252,17 @@ void Demo::setupTextFormatAct()
 
 	/**---*/
 	
-	const QIcon leftIcon =  QIcon(":images/textleft.png");
+	const QIcon leftIcon = QIcon::fromTheme("format-justify-left", QIcon(":images/textleft.png"));
 	m_pAlignLeft = new QAction(leftIcon, tr("&Left"), this);
 	m_pAlignLeft->setShortcut(Qt::CTRL + Qt::Key_L);
 	m_pAlignLeft->setCheckable(true);
 
-	const QIcon centerIcon = QIcon(":images/textcenter.png");
+	const QIcon centerIcon = QIcon::fromTheme("format-justify-center", QIcon(":images/textcenter.png"));
 	m_pAlignCenter = new QAction(centerIcon, tr("C&enter"), this);
 	m_pAlignCenter->setShortcut(Qt::CTRL + Qt::Key_E);
 	m_pAlignCenter->setCheckable(true);
 
-	const QIcon rightIcon = QIcon(":images/textright.png");
+	const QIcon rightIcon = QIcon::fromTheme("format-justify-right", QIcon(":images/textright.png"));
 	m_pAlignRight = new QAction(rightIcon, tr("&Right"), this);
 	m_pAlignRight->setShortcut(Qt::CTRL + Qt::Key_R);
 	m_pAlignRight->setCheckable(true);
@@ -315,6 +326,7 @@ void Demo::setupTextFontAct()
 	connect(m_pFontComboBox, QOverload<const QString &>::of(&QComboBox::activated), this, &Demo::textFamily);
 
 	m_pFontSizeComboBox = new QComboBox(fontToolBar);
+	m_pFontSizeComboBox->setObjectName("comboSize");
 	fontToolBar->addWidget(m_pFontSizeComboBox);
 	m_pFontSizeComboBox->setEditable(true);
 	const QList<int> standardSizes = QFontDatabase::standardSizes();

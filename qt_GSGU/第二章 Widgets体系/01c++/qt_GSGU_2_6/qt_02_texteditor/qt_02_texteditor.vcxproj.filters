@@ -40,4 +40,9 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="demo.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
 </Project>

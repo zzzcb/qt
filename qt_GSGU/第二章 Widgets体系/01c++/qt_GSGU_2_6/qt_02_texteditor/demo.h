@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <QtWidgets/QMainWindow>
 #include "ui_demo.h"
@@ -17,6 +17,7 @@ public:
     ~Demo();
 
 	bool load(const QString& fileName);
+
 
 public slots:
 	void newFile();
