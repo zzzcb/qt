@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_04_ppt_statusbar", "qt_0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_05_orange_splashscreen", "qt_05_orange_splashscreen\qt_05_orange_splashscreen.vcxproj", "{9D3714FB-66F2-4E01-B093-6F7B35211DFD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_06_mdi_area", "qt_06_mdi_area\qt_06_mdi_area.vcxproj", "{A88FAC1C-79B9-41F4-9ADE-7EBF7AC03DE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -39,6 +41,10 @@ Global
 		{9D3714FB-66F2-4E01-B093-6F7B35211DFD}.Debug|x64.Build.0 = Debug|x64
 		{9D3714FB-66F2-4E01-B093-6F7B35211DFD}.Release|x64.ActiveCfg = Release|x64
 		{9D3714FB-66F2-4E01-B093-6F7B35211DFD}.Release|x64.Build.0 = Release|x64
+		{A88FAC1C-79B9-41F4-9ADE-7EBF7AC03DE5}.Debug|x64.ActiveCfg = Debug|x64
+		{A88FAC1C-79B9-41F4-9ADE-7EBF7AC03DE5}.Debug|x64.Build.0 = Debug|x64
+		{A88FAC1C-79B9-41F4-9ADE-7EBF7AC03DE5}.Release|x64.ActiveCfg = Release|x64
+		{A88FAC1C-79B9-41F4-9ADE-7EBF7AC03DE5}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
