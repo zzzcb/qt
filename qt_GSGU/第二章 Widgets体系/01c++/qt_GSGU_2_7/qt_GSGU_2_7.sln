@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_00_basic", "qt_00_basic\qt_00_basic.vcxproj", "{A5FB0161-3D52-40C2-A82E-D82AE880D4AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_01_keyboard_input", "qt_01_keyboard_input\qt_01_keyboard_input.vcxproj", "{E2FF1ADB-ABA4-46B1-B763-49A4FD9E2122}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_02_comboBox", "qt_02_comboBox\qt_02_comboBox.vcxproj", "{AFCBB50F-43D2-415F-A328-EA09FFA85EF8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_03_dialog", "qt_03_dialog\qt_03_dialog.vcxproj", "{075DC71B-AD4C-43AE-B23E-D1CFFBB6D8C0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_04_slider", "qt_04_slider\qt_04_slider.vcxproj", "{210B0FDB-1071-4B45-8B56-CDB850DB3DE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_05_spinbox", "qt_05_spinbox\qt_05_spinbox.vcxproj", "{34F10E8B-5AF9-4A8B-B9DF-8B3BD028D9F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt_06_frame", "qt_06_frame\qt_06_frame.vcxproj", "{1E6F6229-2D99-4F0B-9B65-57DAC34D972D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5FB0161-3D52-40C2-A82E-D82AE880D4AA}.Debug|x64.ActiveCfg = Debug|x64
+		{A5FB0161-3D52-40C2-A82E-D82AE880D4AA}.Debug|x64.Build.0 = Debug|x64
+		{A5FB0161-3D52-40C2-A82E-D82AE880D4AA}.Release|x64.ActiveCfg = Release|x64
+		{A5FB0161-3D52-40C2-A82E-D82AE880D4AA}.Release|x64.Build.0 = Release|x64
+		{E2FF1ADB-ABA4-46B1-B763-49A4FD9E2122}.Debug|x64.ActiveCfg = Debug|x64
+		{E2FF1ADB-ABA4-46B1-B763-49A4FD9E2122}.Debug|x64.Build.0 = Debug|x64
+		{E2FF1ADB-ABA4-46B1-B763-49A4FD9E2122}.Release|x64.ActiveCfg = Release|x64
+		{E2FF1ADB-ABA4-46B1-B763-49A4FD9E2122}.Release|x64.Build.0 = Release|x64
+		{AFCBB50F-43D2-415F-A328-EA09FFA85EF8}.Debug|x64.ActiveCfg = Debug|x64
+		{AFCBB50F-43D2-415F-A328-EA09FFA85EF8}.Debug|x64.Build.0 = Debug|x64
+		{AFCBB50F-43D2-415F-A328-EA09FFA85EF8}.Release|x64.ActiveCfg = Release|x64
+		{AFCBB50F-43D2-415F-A328-EA09FFA85EF8}.Release|x64.Build.0 = Release|x64
+		{075DC71B-AD4C-43AE-B23E-D1CFFBB6D8C0}.Debug|x64.ActiveCfg = Debug|x64
+		{075DC71B-AD4C-43AE-B23E-D1CFFBB6D8C0}.Debug|x64.Build.0 = Debug|x64
+		{075DC71B-AD4C-43AE-B23E-D1CFFBB6D8C0}.Release|x64.ActiveCfg = Release|x64
+		{075DC71B-AD4C-43AE-B23E-D1CFFBB6D8C0}.Release|x64.Build.0 = Release|x64
+		{210B0FDB-1071-4B45-8B56-CDB850DB3DE0}.Debug|x64.ActiveCfg = Debug|x64
+		{210B0FDB-1071-4B45-8B56-CDB850DB3DE0}.Debug|x64.Build.0 = Debug|x64
+		{210B0FDB-1071-4B45-8B56-CDB850DB3DE0}.Release|x64.ActiveCfg = Release|x64
+		{210B0FDB-1071-4B45-8B56-CDB850DB3DE0}.Release|x64.Build.0 = Release|x64
+		{34F10E8B-5AF9-4A8B-B9DF-8B3BD028D9F2}.Debug|x64.ActiveCfg = Debug|x64
+		{34F10E8B-5AF9-4A8B-B9DF-8B3BD028D9F2}.Debug|x64.Build.0 = Debug|x64
+		{34F10E8B-5AF9-4A8B-B9DF-8B3BD028D9F2}.Release|x64.ActiveCfg = Release|x64
+		{34F10E8B-5AF9-4A8B-B9DF-8B3BD028D9F2}.Release|x64.Build.0 = Release|x64
+		{1E6F6229-2D99-4F0B-9B65-57DAC34D972D}.Debug|x64.ActiveCfg = Debug|x64
+		{1E6F6229-2D99-4F0B-9B65-57DAC34D972D}.Debug|x64.Build.0 = Debug|x64
+		{1E6F6229-2D99-4F0B-9B65-57DAC34D972D}.Release|x64.ActiveCfg = Release|x64
+		{1E6F6229-2D99-4F0B-9B65-57DAC34D972D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25FEC64C-6162-48EC-B918-9AB6E59C3416}
+	EndGlobalSection
+EndGlobal
