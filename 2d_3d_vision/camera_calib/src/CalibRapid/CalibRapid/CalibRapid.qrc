@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/extrinsic.png</file>
+        <file>images/intrinsic.png</file>
+        <file>images/loading.gif</file>
+        <file>images/sizegrip.png</file>
+        <file>images/stereo.png</file>
+        <file>CalibRapid.qss</file>
+    </qresource>
+</RCC>

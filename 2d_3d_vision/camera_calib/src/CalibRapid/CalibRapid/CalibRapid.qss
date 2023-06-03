@@ -1,0 +1,356 @@
+*{
+	font-family:Microsoft YaHei;
+	color:	#f1f1f1;
+	background: #2d2d30;
+	outline: none;
+	border: none;
+}
+
+/** Menu Bar */
+QMenuBar::item:selected { /* mouse hover */
+  background: #3e3e40;
+}
+
+QMenuBar::item:pressed {
+  background: #1b1b1c;
+}
+QMenu {
+    background: #1b1b1c;
+}
+QMenu::item:selected {	/* mouse hover */
+    background: #333333;
+}
+QMenu::item:disabled {	
+	color: #656565;
+    background: #1b1b1c;
+}
+
+/** QTabWidget */
+QTabWidget::pane{
+	border: 1px solid #3f3f46;
+}
+
+/** Tool Bar */
+QToolBar {
+    spacing: 5px; 
+    padding: 1px;
+}
+QToolBar::handle{
+	background: #1296db;
+}
+QToolBar::handle:horizontal {
+	width: 3px;
+}
+QToolBar::handle:vertical {
+	height: 3px;
+}
+/** Status Bar */
+QStatusBar{
+    background: #007acc;
+}
+QSizeGrip{
+	background: transparent;
+	image: url(./images/sizegrip.png);
+	width: 20px;
+	height: 20px;
+}
+
+
+QStatusBar::item {
+    border: 0px transparent dark;
+    margin: 0px;
+    border: 0px;
+}
+QStatusBar QToolButton,QStatusBar QLabel {
+	color:white; 
+	background:transparent; 
+	border-width: 0px;
+	margin-top: 5px;
+}
+
+
+/** Scroll Bar */
+QScrollBar{
+    border: none;
+    padding: 1px;
+    height: 10px;
+    width: 10px;
+}
+QScrollBar::handle{
+    background: #686868;
+    min-width: 16px;
+    min-height: 16px;
+}
+QScrollBar::handle:hover{
+    background: #9e9e9e;
+}
+QScrollBar::handle:pressed{
+    background: #efebef;
+}
+QScrollBar::add-line, QScrollBar::sub-line{
+	background: transparent;
+}
+QScrollBar::add-page, QScrollBar::sub-page {
+	background: #3e3e45;
+}
+QAbstractScrollArea::corner{
+	background: transparent;
+}
+
+/** QTreeView */
+QTreeView
+{
+	alternate-background-color: #2a2a2a;
+	background: #252525;
+}
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+    image: url(:/002_qss_icon/branch_close.png);
+}
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+    image: url(:/002_qss_icon/branch_open.png);
+}
+
+/** QListView */
+QListView{
+	background: #3f3f46;
+}
+QListView::item{
+	background: transparent;
+	color: white;
+}
+QListView::item:selected:!active {/** 失去焦点 */
+    background-color: transparent;
+}
+QListView::item:selected:active {  /** 获取焦点 */
+    background-color: #007acc;
+}
+
+/** QGraphicsView */
+QGraphicsView{
+	background: #1e1e1e;
+}
+
+/** QAbstractScrollArea  */
+QAbstractScrollArea{
+	background: #1e1e1e;
+}
+
+/** QDockWidget */
+QDockWidget {
+    background: rgb(37,37,38);
+    border: 1px solid #403F3F;
+}
+
+/** QToolButton */
+QToolButton:hover{
+	background: #3e3e40;
+}
+QToolButton:pressed{
+	background: #007acc;
+}
+
+/** QPushButton */
+QPushButton {
+    border: 1px solid #515151;
+	background-color:#3f3f46;
+	color:#f1f1f1;
+	padding: 0px 0px;
+	width: 70px;
+	height: 15px;
+	font-size: 12px;
+}
+QPushButton:hover{
+	border-color: #007acc;
+}
+QPushButton:pressed
+{
+    border-width: 1px;      
+    background-color: #007acc;
+    border-color: #007acc;
+}
+
+
+/** QLineEdit QComboBox */
+QLineEdit,QComboBox{
+    background: #3f3f46;
+    selection-background-color: #35495c;
+	border: 1px solid #3f3f46;
+    padding: 0 0px;
+	height:17px;
+	font-size: 12px;
+}
+
+
+QComboBox::drop-down{
+	border: none;
+}
+QComboBox::down-arrow
+{
+    image: url(./images/down-arrow.png);
+	width: 13px;
+}
+
+/** QCheckBox */
+QCheckBox:disabled
+{
+    color: #ff0000;
+}
+
+/** QHeaderView QTableView */
+QHeaderView::section, QTableCornerButton::section {
+	background: #2d2d30;
+	padding: 0 3px;
+	border: 1px solid #414141;
+}
+
+QTableView
+{
+    gridline-color: #414141;
+}
+QTableView::item{
+    background: transparent;
+	outline-style: none;
+	border: none;
+}
+
+/** QSplitter */
+QSplitter::handle{
+	background: #3e3e45;
+}
+
+/** QTabBar */
+QTabBar{
+	border: none;
+	font-weight: Bold; 
+	qproperty-drawBase: 0;
+}
+QTabBar::tab {
+    background: #222222;
+    padding: 3px 5px;    
+}
+QTabBar::tab:hover {
+    background: #1c97ea;
+}
+QTabBar::tab:selected {
+    background: #007acc;
+}
+
+/** QSlider */
+QSlider::handle {/*设置中间的那个滑动的键*/                           
+    background: #007acc;
+}
+QSlider::groove {
+	background: #3e3e45;
+}
+QSlider::groove:horizontal {
+    height: 3px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    left:5px; right: 5px;
+}
+QSlider::handle:horizontal{
+    width: 6px;
+    margin: -5px; /* height */
+}
+QSlider::add-page{/*还没有滑上去的地方*/
+    background:#3e3e45;
+}
+QSlider::sub-page{/*已经划过的从地方*/                            
+    background: #5baeff;
+}
+
+/** QCheckBox */
+QCheckBox:disabled { /** 禁用 */
+    color: #070707;
+}
+QCheckBox::indicator:disabled {/** 禁用 */
+    background-color: #070707;
+}
+
+
+
+/** Else */
+lxQToolBarWidget QWidget#tools{
+	background: #1e1e1e;
+}
+lxQToolBarWidget QWidget#tools QToolButton{
+	background: #1e1e1e;
+}
+lxQToolBarWidget QWidget#tools QSlider{
+	background: #1e1e1e;
+}
+
+
+lxQMessageBox QWidget#up {
+	background: #1a1a1a;
+}
+lxQMessageBox QWidget#up QPushButton {
+	background: transparent;
+	border: 0;
+}
+lxQMessageBox QWidget#up QLabel {
+	background: transparent;
+	font-size: 16px;
+	font-weight: bold;
+}
+lxQMessageBox QWidget#mid {
+	background: #252525;
+}
+lxQMessageBox QWidget#mid QLabel {
+	background: transparent;
+	font-size: 16px;
+}
+lxQMessageBox QWidget#down {
+	background: #333333;
+}
+
+QToolBar#sideBar,QToolBar#sideBar QWidget{
+	background: #232323;
+    margin: 0px;
+	padding: 0px;
+	border:none;
+}
+QToolBar#sideBar::handle{
+	background: transparent;
+}
+QToolBar#sideBar QToolButton {
+	border-left: 2px solid #232323;
+	background: transparent;
+	width: 100px;
+	height: 60px;
+}
+QToolBar#sideBar QToolButton:checked {
+	border-left: 3px solid #1296db;
+	background: #101010;
+	padding-left: 0px;		/** 避免选中action时,向右下方偏移 */
+    padding-right: 0px;
+}
+QToolBar#sideBar QWidget#algo QLabel{
+	qproperty-alignment: 'AlignHCenter|AlignVCenter';
+	background: transparent;
+}
+QToolBar#sideBar QWidget#algo QLabel#curAlgo{
+	font-weight: bold;
+	font-size: 16px;
+}
+QToolBar#sideBar QWidget#algo{
+	padding: 5px;
+}
+QWidget#algoPanel{
+	background: #232323;
+}
+QWidget#algoPanel QLabel{
+	background: #232323;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 5px;
+}
+QWidget#algoPanel QListWidget{
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	font-weight: bold;
+}
+
+PictureWidget{
+	background:#2a2a2a;
+}
